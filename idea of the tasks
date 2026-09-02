@@ -1,0 +1,32 @@
+Task 1
+MongoDB Transaction
+       ↓
+DB + Outbox
+       ↓
+Background Worker
+       ↓
+Redis
+
+
+Task 2
+Redis
+ ↓
+Version 5
+ ↓
+Version 6
+ ↓
+Lua checks versions atomically
+ ↓
+Old versions rejected
+
+
+Task 3
+Request
+   ↓
+Token Bucket
+   ↓
+Token available? ── Yes → Allow
+       │
+       No
+       ↓
+      429
